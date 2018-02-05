@@ -1,1 +1,1 @@
-word.js
+require(Letters);

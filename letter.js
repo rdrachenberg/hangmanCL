@@ -1,24 +1,24 @@
-// constructor creation 
-// array of new letter objects as first FUNCTION 
-
-var Letters = []
-function aToZ(c1 = 'a', c2 = 'z') {
-    a = 'abcdefghijklmnopqrstuvwxyz'.split('');
-    return (a.slice(a.indexOf(c1), a.indexOf(c2) + 1));
-    console.log(aToZ.return);
-
-    }; 
-
-var alphabet = {Letters};
-
-// aplphabet.Letters = new Letters();
-
-console.log(aToZ());
-
-
-// need a property fuction check guess 
-
-
-// need to export module *********************
-// modle.exports(Letters);
-[{}]
+var wordList = require('./wordList.js');
+// create a contructor called Letter
+var Letter = function (letterProp) {
+    // stores the actual letter
+    this.letter = letterProp;
+    // initially sets the guess boolean to false 
+    this.guess = false;
+    // create a function to Hide/Show the letter
+    this.show = function () {
+        if (this.guess == ' ') { 
+            
+            this.guess = true;
+            return '  ';
+        } if (this.guess === false) { 
+            return ' _ ';
+        } else { 
+            // if correct it will return this letter
+            return this.letterProp;
+        }
+    };
+    
+};
+// export to use in word.js
+module.exports = Letter;
